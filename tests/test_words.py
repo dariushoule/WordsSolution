@@ -80,18 +80,18 @@ class TestWordsFunctionality(unittest.TestCase):
     # Tests overall functionality of the application against known good unix_dict outputs.
     def test_functionality_unix_dict(self):
         try:
-            os.unlink('outputs/unix_dict/sequences')
+            os.unlink('tests/outputs/unix_dict/sequences')
         except OSError:
             pass
 
         try:
-            os.unlink('outputs/unix_dict/words')
+            os.unlink('tests/outputs/unix_dict/words')
         except OSError:
             pass
 
-        os.system("python words.py inputs/unix_dict.txt tests/outputs/unix_dict -n 4")
+        os.system("python words_solution.py inputs/unix_dict.txt tests/outputs/unix_dict -n 4")
 
-        with open("tests/outputs/unix_dict/words", "r") as eSeqHandle, open("tests/outputs/unix_dict/words", "r") as tSeqHandle:
+        with open("outputs/unix_dict/words", "r") as eSeqHandle, open("tests/outputs/unix_dict/words", "r") as tSeqHandle:
             expect_content = eSeqHandle.read()
             test_content = tSeqHandle.read()
             self.assertGreater(len(expect_content), 0)
