@@ -1,0 +1,44 @@
+Dariuss-MBP:WordsSolution dariushoule$ python -m line_profiler words.py.lprof 
+Timer unit: 1e-06 s
+
+Total time: 1e-06 s
+File: classes/UniqueSequenceGenerator.py
+Function: __init__ at line 10
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    10                                               @profile
+    11                                               def __init__(self, sequence_length):
+    12         1            1      1.0    100.0          if sequence_length <= 0:
+    13                                                       raise IndexError
+    14                                           
+    15         1            0      0.0      0.0          self.sequence_length = sequence_length
+    16         1            0      0.0      0.0          self.sequence_map = {}
+
+Total time: 3.44561 s
+File: classes/UniqueSequenceGenerator.py
+Function: add_word at line 25
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    25                                               @profile
+    26                                               def add_word(self, word):
+    27    235886       125424      0.5      3.6          word = word.strip()
+    28                                           
+    29   1785715       830392      0.5     24.1          for i in range(0, len(word) - self.sequence_length + 1):
+    30   1549829       784840      0.5     22.8              seq = word[i:i+self.sequence_length]
+    31                                           
+    32   1549829       796837      0.5     23.1              if seq in self.sequence_map:
+    33   1485297       860047      0.6     25.0                  self.sequence_map[seq]["unique"] = False
+    34                                                       else:
+    35     64532        48068      0.7      1.4                  self.sequence_map[seq] = {"word": word, "unique": True}
+
+Total time: 0.024183 s
+File: classes/UniqueSequenceGenerator.py
+Function: get_sequences_and_words at line 42
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    42                                               @profile
+    43                                               def get_sequences_and_words(self):
+    44         1        24183  24183.0    100.0          return {k: v["word"] for k, v in self.sequence_map.iteritems() if v["unique"]}
