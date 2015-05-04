@@ -31,33 +31,6 @@ The main component of this solution is a map that associates a sequence of chara
 
 ### Structure
 
-```
-├── classes
-│   ├── unique_sequence_generator.py
-│   └── __init__.py
-├── inputs
-│   ├── dictionary.txt
-│   ├── short.txt
-│   └── unix_dict.txt
-├── outputs
-│   ├── dictionary
-│   │   ├── sequences
-│   │   └── words
-│   ├── short
-│   │   ├── sequences
-│   │   └── words
-│   └── unix_dict
-│       ├── sequences
-│       └── words
-├── readme.md
-├── tests
-│   ├── __init__.py
-│   ├── outputs
-│   │   └── unix_dict
-│   └── test_words.py
-└── words_solution.py
-```
-
 **classes**
 
 This module contains the UniqueSequenceGenerator.
