@@ -33,7 +33,7 @@ The main component of this solution is a map that associates a sequence of chara
 
 ```
 ├── classes
-│   ├── UniqueSequenceGenerator.py
+│   ├── unique_sequence_generator.py
 │   └── __init__.py
 ├── inputs
 │   ├── dictionary.txt
