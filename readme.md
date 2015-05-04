@@ -79,6 +79,13 @@ This is the main application entrypoint.
 Tests can be run from the main project directory using 
 ``` python -m unittest discover ``` A standard set of tests for the UniqueSequenceGenerator class is available as well as a functionality test for words_solution.py.
 
+The tests include coverage for important and unspecified behavior in the problem description.
+
+#### Unspecified behavior accounted for
+
+- Non alpha characters are stripped from input.
+- Input characters are lowercased to prevent duplicate sequences with varying case.
+
 
 ### Whats next?
 

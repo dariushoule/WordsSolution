@@ -32,16 +32,30 @@ class TestUniqueSequenceGenerator(unittest.TestCase):
         self.assertEquals(sg.get_sequences_and_words(), {})
 
     # Tests adding a blank string in UniqueSequenceGenerator
-    def test_add_short_word(self):
+    def test_add_blank_word(self):
         sg = UniqueSequenceGenerator(10)
         sg.add_word("")
         self.assertEquals(sg.get_sequences_and_words(), {})
 
     # Tests adding a non-string in UniqueSequenceGenerator
-    def test_add_short_word(self):
+    def test_add_non_string(self):
         with self.assertRaises(AttributeError):
             sg = UniqueSequenceGenerator(10)
             sg.add_word(123)
+
+    # Tests unspecified behavior, non-alpha
+    def test_add_non_alpha(self):
+        sg = UniqueSequenceGenerator(4)
+        sg.add_word("abcd1234fghi")
+        sg.add_word("we're")
+        self.assertEquals(sg.get_sequences_and_words(), {'abcd': 'abcdfghi', 'bcdf': 'abcdfghi', 'cdfg': 'abcdfghi',
+                                                         'dfgh': 'abcdfghi', 'fghi': 'abcdfghi', 'were': 'were'})
+
+    # Tests unspecified behavior, case
+    def test_add_case_insensitive(self):
+        sg = UniqueSequenceGenerator(4)
+        sg.add_word("HeLlO")
+        self.assertEquals(sg.get_sequences_and_words(), {'ello': 'hello', 'hell': 'hello'})
 
     # Tests behavior of different sequence lengths with UniqueSequenceGenerator
     def test_sequence_lengths(self):
