@@ -1,6 +1,6 @@
 import unittest
 import os
-from classes.UniqueSequenceGenerator import UniqueSequenceGenerator
+from classes.unique_sequence_generator import UniqueSequenceGenerator
 
 
 # Tests for the UniqueSequenceGenerator class

@@ -1,7 +1,7 @@
 import os
 import argparse
 
-from classes.UniqueSequenceGenerator import UniqueSequenceGenerator
+from classes.unique_sequence_generator import UniqueSequenceGenerator
 
 
 parser = argparse.ArgumentParser(description='An n-length unique sequence generator.')
