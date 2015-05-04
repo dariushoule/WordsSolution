@@ -72,7 +72,7 @@ This folder contains the sample outputs used to verify the correct behavior of t
 
 **tests**
 
-This module contains the applications unit tests.
+This module contains the application's unit tests.
 
 **words_solution.py**
 
@@ -88,7 +88,7 @@ The tests include coverage for important and unspecified behavior in the problem
 
 **Unspecified behavior accounted for**
 
-- Non alpha characters are stripped from input.
+- Non-alpha characters are stripped from input.
 - Input characters are lowercased to prevent duplicate sequences with varying case.
 
 
@@ -96,7 +96,7 @@ The tests include coverage for important and unspecified behavior in the problem
 
 If I had more time to work on this project these are some of the things I'd look at. 
 
-- Ensuring that the source word entry in the map was a reference rather than a copy would prevent widescale duplication of words in the the dictionary. I think this would have the most noticable reduction in memory usage with the least amount of work.
+- Ensuring that the source word entry in the map is a reference rather than a copy would prevent widescale duplication of words. I think this would have the most noticable reduction in memory usage with the least amount of work.
 - The memory footprint of the application could probably be reduced further by using a smaller immutable structure over a dict for retaining source word and uniqueness in the map.
 - The amount of time spent updating a sequence to flag it as non-unique had much higher processor overhead than inserting a completely new entry. Again, it may be worth investigating a smaller immutable strucuture and overwriting the entry completely rather than updating the dict. 
 - When a sequence is flagged as non-unique we no longer need to keep track of the word it was retrieved from. This can lower our memory impact further.
