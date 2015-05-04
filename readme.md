@@ -58,19 +58,24 @@ The main component of this solution is a map that associates a sequence of chara
 └── words_solution.py
 ```
 
-#### classes 
+** classes **
+
 This module contains the UniqueSequenceGenerator.
 
-#### inputs 
+** inputs **
+
 This folder contains sample inputs that can be run against the program.
 
-#### outputs 
+** outputs **
+
 This folder contains the sample outputs used to verify the correct behavior of the application.
 
-#### tests 
+** tests **
+
 This module contains the applications unit tests.
 
-#### words_solution.py 
+** words_solution.py **
+
 This is the main application entrypoint.
 
 
@@ -81,7 +86,7 @@ Tests can be run from the main project directory using
 
 The tests include coverage for important and unspecified behavior in the problem description.
 
-#### Unspecified behavior accounted for
+** Unspecified behavior accounted for **
 
 - Non alpha characters are stripped from input.
 - Input characters are lowercased to prevent duplicate sequences with varying case.
