@@ -8,7 +8,7 @@ https://gist.github.com/seanthehead/11180933
 ### Usage
 
 ```
-python words.py [-h] [-n N] file_in directory_out
+python words_solution.py [-h] [-n N] file_in directory_out
 
 An n-length unique sequence generator.
 
@@ -55,7 +55,7 @@ The main component of the solution contained herein is a map that associates a s
 │   ├── outputs
 │   │   └── unix_dict
 │   └── test_words.py
-└── words.py
+└── words_solution.py
 ```
 
 #### classes 
@@ -70,14 +70,14 @@ This folder contains the sample outputs used to verify the correct behavior of t
 #### tests 
 This module contains the applications unit tests.
 
-#### words.py 
+#### words_solution.py 
 This is the main application entrypoint.
 
 
 ### Testing
 
 Tests can be run from the main project directory using 
-``` python -m unittest discover ``` A standard set of tests for the UniqueSequenceGenerator class is available as well as a functionality test for words.py.
+``` python -m unittest discover ``` A standard set of tests for the UniqueSequenceGenerator class is available as well as a functionality test for words_solution.py.
 
 
 ### Whats next?
@@ -89,4 +89,4 @@ If I had more time to work on this project these are some of the things I'd look
 - The amount of time spent updating a sequence to flag it as non-unique had much higher processor overhead than inserting a completely new entry. Again, it may be worth investigating a smaller immutable strucuture and overwriting the entry completely rather than updating the dict. 
 - When a sequence is flagged as non-unique we no longer need to keep track of the word it was retrieved from. This can lower our memory impact further.
 
-A full breakdown of where the application is spending the majority of its time is available [here](perf-CPU.txt). These performance tests were run on the ``` unix_dict ``` input. Peak memory usage can be examined using ``` python -m memory_profiler words.py inputs/<input> outputs/<output> -n 4 ```. 
+A full breakdown of where the application is spending the majority of its time is available [here](perf-CPU.txt). These performance tests were run on the ``` unix_dict ``` input. Peak memory usage can be examined using ``` python -m memory_profiler words_solution.py inputs/<input> outputs/<output> -n 4 ```. 
