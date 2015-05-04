@@ -24,7 +24,7 @@ optional arguments:
 
 ### Approach
 
-The main component of the solution contained herein is a map that associates a sequence of characters to its source word and uniqueness. The UniqueSequenceGenerator is a utility class that facilitates this by accepting whole words and splitting them into N length sequences. At any time the map can be filtered to unique sequences. 
+The main component of this solution is a map that associates a sequence of characters to its source word and uniqueness. The UniqueSequenceGenerator is a utility class that facilitates this by accepting whole words and splitting them into N length sequences. At any time the map can be filtered to exclusively unique sequences. 
 
 
 ![Image](class.png?raw=true)
