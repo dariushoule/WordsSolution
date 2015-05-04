@@ -21,7 +21,7 @@ class UniqueSequenceGenerator:
     # @param word the dictionary word
 
     def add_word(self, word):
-        word = word.strip()
+        word = word.strip().lower()
 
         for i in range(0, len(word) - self.sequence_length + 1):
             seq = word[i:i+self.sequence_length]
